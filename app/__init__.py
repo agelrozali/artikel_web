@@ -15,7 +15,9 @@ def create_app():
 
     from .routes import main
     from .admin_routes import admin
+    from .auth_routes import auth
     app.register_blueprint(main)
     app.register_blueprint(admin, url_prefix='/admin')
+    app.register_blueprint(auth, url_prefix='/login')
 
     return app
